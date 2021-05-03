@@ -1,4 +1,4 @@
-package golovach;
+package golovach.core;
 
 public class Fibonacci {
     public static void main(String[] args) {

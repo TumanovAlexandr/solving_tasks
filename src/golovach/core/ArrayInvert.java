@@ -1,4 +1,4 @@
-package golovach;
+package golovach.core;
 
 import java.util.Arrays;
 
