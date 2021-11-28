@@ -2,6 +2,7 @@ package zaur.comparation;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Test2 {
@@ -14,7 +15,7 @@ public class Test2 {
         employees.add(employee2);
         employees.add(employee3);
         System.out.println(employees);
-        Collections.sort(employees);
+        Collections.sort(employees, new idComparator());
         System.out.println(employees);
     }
 }
@@ -44,19 +45,33 @@ class Employee implements Comparable<Employee>{
 
     @Override
     public int compareTo(Employee o) {
-        /*if (this.id == o.id) {
+        if (this.id == o.id) {
             return 0;
         } else if (this.id < o.id) {
             return -1;
         } else {
             return 1;
-        }*/
+        }
 //        return this.id - o.id;
 //        return this.id.compareTo(o.id);
-        int res = this.name.compareTo(o.name);
-        if (res == 0) {
-            res = this.surname.compareTo(o.surname);
+//        int res = this.name.compareTo(o.name);
+//        if (res == 0) {
+//            res = this.surname.compareTo(o.surname);
+//        }
+//        return res;
+    }
+}
+
+class idComparator implements Comparator<Employee> {
+
+    @Override
+    public int compare(Employee emp, Employee otherEmp) {
+        if (emp.id == otherEmp.id) {
+            return 0;
+        } else if (emp.id < otherEmp.id) {
+            return -1;
+        } else {
+            return 1;
         }
-        return res;
     }
 }
