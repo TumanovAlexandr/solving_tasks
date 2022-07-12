@@ -1,9 +1,10 @@
 package algorithms;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Boogle {
-    static final List<String> dictionary = List.of("RAY", "APPLE", "FAKE", "BOOKS");
+    static final List<String> dictionary = Arrays.asList("RAY", "APPLE", "FAKE", "BOOKS");
 
     static final int M = 4, N = 4;
 

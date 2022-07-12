@@ -1,22 +1,32 @@
 package test_task;
 
+import java.util.ArrayList;
+
 class Test {
     public static void main(String[] args) {
-        String[][] astr = new String[2][];
-        astr[0] = new String[2];
-        astr[1] = new String[3];
-        int a = 42;
-        for (int i = 0; i < astr.length; i++) {
-            for (int j = 0; j < astr.length; j++) {
-                astr[i][j] = "" + a;
-                a++;
-            }
+        System.out.println(reverse3("123456"));
+
+        ArrayList<Object> objects = new ArrayList<>(10);
+    }
+
+    public static String reverse(String str) {
+
+        String temp = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            temp = temp + str.charAt(i);
         }
-        for (String[] e : astr) {
-            for (String c : e) {
-                System.out.print(c + " ");
-            }
-            System.out.println();
-        }
+        return temp;
+    }
+
+    public static String reverse2(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+
+    public static String reverse3(String str) {
+
+        if (str.length() == 0) return "";
+
+        return reverse3(str.substring(1)) + str.charAt(0);
     }
 }
