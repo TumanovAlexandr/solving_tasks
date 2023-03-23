@@ -1,5 +1,6 @@
 package basepatterns.behavioral.iterator;
 
-public interface Collection {
-    Iterator getIterator();
+public interface Collection<T> {
+    void add(T item);
+    Iterator<T> iterator();
 }

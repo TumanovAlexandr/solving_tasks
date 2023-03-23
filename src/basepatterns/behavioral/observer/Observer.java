@@ -1,7 +1,5 @@
 package basepatterns.behavioral.observer;
 
-import java.util.List;
-
 public interface Observer {
-    void handleEvent(List<String> vacancies);
+    void update(float temperature, float humidity, float pressure);
 }
